@@ -1,0 +1,9 @@
+{
+  "generators": {
+    "migration": {
+      "factory": "./dist/generators/migration",
+      "schema": "./dist/generators/schema.json",
+      "description": "migration generator"
+    }
+  }
+}
