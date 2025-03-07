@@ -18,7 +18,9 @@
     "@nestjs/common": "^10.0.2",
     "@nestjs/typeorm": "^11.0.0",
     "lodash": "^4.17.21",
-    "@ecommerce-nx/entities": "0.0.1"
+    "@ecommerce-nx/entities": "0.0.1",
+    "@ecommerce-nx/entities-migration": "0.0.1",
+    "typeorm": "^0.3.21"
   },
   "nx": {
     "sourceRoot": "packages/datasource/src",
