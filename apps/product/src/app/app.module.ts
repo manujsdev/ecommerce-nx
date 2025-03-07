@@ -3,9 +3,13 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { DatasourceModule } from '@ecommerce-nx/datasource';
 import configuration from '../config/configuration';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [
+    ConfigModule.forRoot({
+      load: [configuration],
+    }),
     DatasourceModule.forRootAsync({
       useFactory: () => {
         return {

@@ -11,6 +11,9 @@
     },
     {
       "path": "./apps/product"
+    },
+    {
+      "path": "./packages/entities"
     }
   ]
 }
