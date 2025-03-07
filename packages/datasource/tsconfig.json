@@ -4,6 +4,9 @@
   "include": [],
   "references": [
     {
+      "path": "../entities-migration"
+    },
+    {
       "path": "../entities"
     },
     {

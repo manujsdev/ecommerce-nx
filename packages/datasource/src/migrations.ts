@@ -1,4 +1,3 @@
-export default [];
-// import { Init1741105742845 } from '@ecommerce-platform/entities-migrations';
+import { Init1741379248657 } from '@ecommerce-nx/entities-migration';
 
-// export default [Init1741105742845];
+export default [Init1741379248657];

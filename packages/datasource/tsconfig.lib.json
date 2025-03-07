@@ -17,6 +17,9 @@
   "include": ["src/**/*.ts"],
   "references": [
     {
+      "path": "../entities-migration/tsconfig.lib.json"
+    },
+    {
       "path": "../entities/tsconfig.lib.json"
     }
   ]
