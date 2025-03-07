@@ -17,6 +17,9 @@
     },
     {
       "path": "./tools/typeorm-plugin"
+    },
+    {
+      "path": "./packages/entities-migration"
     }
   ]
 }

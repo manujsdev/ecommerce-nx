@@ -17,7 +17,8 @@
     "tslib": "^2.3.0",
     "@nestjs/common": "^10.0.2",
     "@nestjs/typeorm": "^11.0.0",
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "@ecommerce-nx/entities": "0.0.1"
   },
   "nx": {
     "sourceRoot": "packages/datasource/src",
@@ -42,7 +43,7 @@
         "options": {
           "tsConfig": "packages/datasource/tsconfig.lib.json",
           "datasource": "packages/datasource/src/config/datasource.ts",
-          "migrations": ""
+          "migrations": "packages/entities-migration/src/migrations"
         }
       }
     }

@@ -1,0 +1,9 @@
+{
+  "executors": {
+    "migration": {
+      "implementation": "./dist/executors/migration",
+      "schema": "./dist/executors/schema.json",
+      "description": "migration executor"
+    }
+  }
+}
