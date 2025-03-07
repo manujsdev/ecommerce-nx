@@ -1,0 +1,39 @@
+{
+  "name": "@ecommerce-nx/datasource",
+  "version": "0.0.1",
+  "private": true,
+  "main": "./src/index.js",
+  "module": "./src/index.js",
+  "types": "./src/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./src/index.d.ts",
+      "import": "./src/index.js",
+      "default": "./src/index.js"
+    }
+  },
+  "dependencies": {
+    "tslib": "^2.3.0",
+    "@nestjs/common": "^10.0.2"
+  },
+  "nx": {
+    "targets": {
+      "build": {
+        "executor": "@nx/js:tsc",
+        "outputs": [
+          "{options.outputPath}"
+        ],
+        "options": {
+          "outputPath": "dist/packages/datasource",
+          "tsConfig": "packages/datasource/tsconfig.lib.json",
+          "packageJson": "packages/datasource/package.json",
+          "main": "packages/datasource/src/index.ts",
+          "assets": [
+            "packages/datasource/*.md"
+          ]
+        }
+      }
+    }
+  }
+}
