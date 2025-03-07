@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { DatasourceModule } from '@ecommerce-nx/datasource';
+import configuration from '../config/configuration';
 
 @Module({
   imports: [
@@ -9,14 +10,14 @@ import { DatasourceModule } from '@ecommerce-nx/datasource';
       useFactory: () => {
         return {
           type: 'postgres',
-          // host: configuration().postgres_host,
-          // port: configuration().postgres_port,
-          // username: configuration().postgres_user,
-          // password: configuration().postgres_password,
-          // database: configuration().postgres_database,
+          host: configuration().postgres_host,
+          port: configuration().postgres_port,
+          username: configuration().postgres_user,
+          password: configuration().postgres_password,
+          database: configuration().postgres_database,
           logging: false,
           poolSize: 8,
-          applicationName: 'product-catalog',
+          applicationName: 'product',
         };
       },
     }),

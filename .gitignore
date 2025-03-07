@@ -5,6 +5,12 @@ dist
 tmp
 out-tsc
 
+# configs
+/apps/*/src/config/*
+/packages/*/src/config/*
+
+.env
+
 # dependencies
 node_modules
 
