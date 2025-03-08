@@ -4,11 +4,20 @@ import { AppService } from './app.service';
 import { DatasourceModule } from '@ecommerce-nx/datasource';
 import configuration from '../config/configuration';
 import { ConfigModule } from '@nestjs/config';
+import { ThrottlerModule } from '@nestjs/throttler';
 
 @Module({
   imports: [
     ConfigModule.forRoot({
       load: [configuration],
+    }),
+    ThrottlerModule.forRoot({
+      throttlers: [
+        {
+          ttl: 60000,
+          limit: 10,
+        },
+      ],
     }),
     DatasourceModule.forRootAsync({
       useFactory: () => {
