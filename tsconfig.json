@@ -20,6 +20,9 @@
     },
     {
       "path": "./packages/entities-migration"
+    },
+    {
+      "path": "./packages/core"
     }
   ]
 }

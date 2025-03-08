@@ -5,9 +5,11 @@ import { DatasourceModule } from '@ecommerce-nx/datasource';
 import configuration from '../config/configuration';
 import { ConfigModule } from '@nestjs/config';
 import { ThrottlerModule } from '@nestjs/throttler';
+import { HealthModule } from '@ecommerce-nx/core';
 
 @Module({
   imports: [
+    HealthModule,
     ConfigModule.forRoot({
       load: [configuration],
     }),
