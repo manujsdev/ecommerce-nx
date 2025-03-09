@@ -4,6 +4,7 @@ import {
   OptionsEntity,
   TagEntity,
   VariantEntity,
+  OptionsValueEntity,
 } from '@ecommerce-nx/entities';
 
 export default [
@@ -12,4 +13,5 @@ export default [
   OptionsEntity,
   TagEntity,
   VariantEntity,
+  OptionsValueEntity,
 ];

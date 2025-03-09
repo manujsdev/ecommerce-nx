@@ -1,6 +1,7 @@
-import { Entity, Column, ManyToOne } from 'typeorm';
+import { Entity, Column, ManyToOne, OneToMany } from 'typeorm';
 import BaseEntity from '../base.entity.js';
 import Product from './entity.js';
+import OptionsValue from './optionsValue.js';
 
 export enum ProductStatus {
   DRAFT = 'draft',
@@ -15,4 +16,7 @@ export default class Options extends BaseEntity {
 
   @ManyToOne(() => Product, (product) => product.options)
   product!: Product;
+
+  @OneToMany(() => OptionsValue, (optionsValue) => optionsValue.value)
+  values!: OptionsValue[];
 }

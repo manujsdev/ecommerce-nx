@@ -1,6 +1,7 @@
-import { Entity, Column, ManyToOne } from 'typeorm';
+import { Entity, Column, ManyToOne, ManyToMany, JoinTable } from 'typeorm';
 import BaseEntity from '../base.entity.js';
 import Product from './entity.js';
+import OptionsValue from './optionsValue.js';
 
 @Entity({ name: 'Variant' })
 export default class Variant extends BaseEntity {
@@ -33,4 +34,8 @@ export default class Variant extends BaseEntity {
 
   @Column()
   width!: number;
+
+  @ManyToMany(() => OptionsValue, (options) => options, { cascade: true })
+  @JoinTable({ name: 'OptionsValueVariant' })
+  options!: OptionsValue;
 }
