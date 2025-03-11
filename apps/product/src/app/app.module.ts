@@ -6,6 +6,15 @@ import configuration from '../config/configuration';
 import { ConfigModule } from '@nestjs/config';
 import { ThrottlerModule } from '@nestjs/throttler';
 import { HealthModule } from '@ecommerce-nx/core';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import {
+  ProductEntity,
+  CategoryEntity,
+  OptionsEntity,
+  TagEntity,
+  VariantEntity,
+  OptionsValueEntity,
+} from '@ecommerce-nx/entities';
 
 @Module({
   imports: [
@@ -21,6 +30,14 @@ import { HealthModule } from '@ecommerce-nx/core';
         },
       ],
     }),
+    TypeOrmModule.forFeature([
+      ProductEntity,
+      CategoryEntity,
+      OptionsEntity,
+      TagEntity,
+      VariantEntity,
+      OptionsValueEntity,
+    ]),
     DatasourceModule.forRootAsync({
       useFactory: () => {
         return {

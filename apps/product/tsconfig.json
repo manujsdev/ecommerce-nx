@@ -4,6 +4,9 @@
   "include": [],
   "references": [
     {
+      "path": "../../packages/entities"
+    },
+    {
       "path": "../../packages/core"
     },
     {

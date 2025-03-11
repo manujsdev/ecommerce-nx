@@ -27,10 +27,12 @@ export class DatasourceModule {
       (migration) => migration.name === 'Init1741379248657'
     );
 
-    if (initial && pending) {
-      Logger.warn(`Resetting database...`);
-
-      await this.dataSource.synchronize(true);
+    if (pending) {
+      if (initial) {
+        Logger.warn(`Resetting database...`);
+        await this.dataSource.synchronize(true);
+      }
+      Logger.warn(`runMigrations...`);
       await this.dataSource.runMigrations();
     }
   }
