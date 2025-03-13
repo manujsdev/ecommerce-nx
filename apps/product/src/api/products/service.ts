@@ -1,17 +1,11 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import {
-  ProductEntity,
-  CategoryEntity,
-  OptionsEntity,
-  TagEntity,
-  VariantEntity,
-  OptionsValueEntity,
-} from '@ecommerce-nx/entities';
+import { ProductEntity, TagEntity } from '@ecommerce-nx/entities';
 import { Repository } from 'typeorm';
+import { CreateProductDTO } from './dto/create.dto';
 
 @Injectable()
-export class AppService {
+export class ProductsService {
   constructor(
     @InjectRepository(TagEntity)
     private tagRepository: Repository<TagEntity>,
@@ -23,7 +17,7 @@ export class AppService {
     return this.tagRepository.save(tag);
   }
 
-  async createProduct(product: Partial<ProductEntity>) {
+  async createProduct(product: CreateProductDTO) {
     console.log(product.tags);
     // return this.productRepository.save(product);
   }

@@ -1,24 +1,15 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { DatasourceModule } from '@ecommerce-nx/datasource';
 import configuration from '../config/configuration';
 import { ConfigModule } from '@nestjs/config';
 import { ThrottlerModule } from '@nestjs/throttler';
 import { HealthModule } from '@ecommerce-nx/core';
-import { TypeOrmModule } from '@nestjs/typeorm';
-import {
-  ProductEntity,
-  CategoryEntity,
-  OptionsEntity,
-  TagEntity,
-  VariantEntity,
-  OptionsValueEntity,
-} from '@ecommerce-nx/entities';
+import { ProductsModule } from './products/module';
 
 @Module({
   imports: [
     HealthModule,
+    ProductsModule,
     ConfigModule.forRoot({
       load: [configuration],
     }),
@@ -30,14 +21,6 @@ import {
         },
       ],
     }),
-    TypeOrmModule.forFeature([
-      ProductEntity,
-      CategoryEntity,
-      OptionsEntity,
-      TagEntity,
-      VariantEntity,
-      OptionsValueEntity,
-    ]),
     DatasourceModule.forRootAsync({
       useFactory: () => {
         return {
@@ -54,7 +37,5 @@ import {
       },
     }),
   ],
-  controllers: [AppController],
-  providers: [AppService],
 })
 export class AppModule {}
