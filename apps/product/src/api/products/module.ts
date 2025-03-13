@@ -5,22 +5,12 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import {
   ProductEntity,
   CategoryEntity,
-  OptionsEntity,
   TagEntity,
-  VariantEntity,
-  OptionsValueEntity,
 } from '@ecommerce-nx/entities';
 
 @Module({
   imports: [
-    TypeOrmModule.forFeature([
-      ProductEntity,
-      CategoryEntity,
-      OptionsEntity,
-      TagEntity,
-      VariantEntity,
-      OptionsValueEntity,
-    ]),
+    TypeOrmModule.forFeature([ProductEntity, CategoryEntity, TagEntity]),
   ],
   controllers: [ProductsController],
   providers: [ProductsService],

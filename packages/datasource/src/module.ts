@@ -24,7 +24,7 @@ export class DatasourceModule {
     const migrations = await this.dataSource.runMigrations();
 
     const initial = migrations.find(
-      (migration) => migration.name === 'Init1741379248657'
+      (migration) => migration.name === 'Init1741902204334'
     );
 
     if (pending) {

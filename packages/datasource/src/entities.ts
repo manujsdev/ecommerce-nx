@@ -1,17 +1,7 @@
 import {
   ProductEntity,
-  CategoryEntity,
-  OptionsEntity,
   TagEntity,
-  VariantEntity,
-  OptionsValueEntity,
+  CategoryEntity,
 } from '@ecommerce-nx/entities';
 
-export default [
-  ProductEntity,
-  CategoryEntity,
-  OptionsEntity,
-  TagEntity,
-  VariantEntity,
-  OptionsValueEntity,
-];
+export default [ProductEntity, TagEntity, CategoryEntity];
